@@ -4,22 +4,25 @@ import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [like, setLike] = useState(false)
 
   return (
     <>
       <h1>Whaddup cuh</h1>
-      <Card />
-      <Card />
+      <Card cardTitle="First Card"/>
+      <Card cardTitle="Second Card"/>
     </>
   )
 }
 
-const Card = () => {
+const Card = ({cardTitle}) => {
+  const [like, setLike] = useState(false)
   return (
 <>
-<h2>you are gae</h2>
-
+<h2>you are gae {cardTitle}</h2>
+<button onClick={() => setLike(!like)}>
+  {like ? 'Unlike' : 'Like'}
+</button>
 </>
 
   )
